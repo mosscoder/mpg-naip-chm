@@ -1,0 +1,30 @@
+source,start,end,gsd_m,extent_pct,leaf_off,product,best,name
+NAIP,2009-07-20,,1.0,99.9,False,True,True,
+NAIP,2011-09-10,,1.0,99.9,False,True,True,
+NAIP,2013-07-09,,1.0,99.9,False,True,True,
+NAIP,2015-11-07,,1.0,37.3,True,True,False,
+NAIP,2016-07-30,,1.0,29.6,False,True,True,
+NAIP,2016-08-16,,1.0,70.4,False,True,True,
+NAIP,2017-10-15,,0.6,70.4,True,True,False,
+NAIP,2017-10-24,,0.6,29.5,True,True,False,
+NAIP,2019-09-15,,0.6,76.2,False,True,True,
+NAIP,2021-08-29,,0.6,99.9,False,True,True,
+NAIP,2023-10-19,,0.6,100.0,True,False,False,
+fixed-wing,2011-09-03,,0.152,82.3,False,True,False,
+fixed-wing,2013-07-15,,0.152,76.9,False,True,False,
+fixed-wing,2014-07-25,,0.152,75.2,False,True,True,
+fixed-wing,2015-06-26,,0.152,76.9,False,True,True,
+fixed-wing,2016-06-22,,0.152,85.0,False,True,False,
+fixed-wing,2017-07-17,,0.152,81.4,False,True,True,
+fixed-wing,2018-06-26,,0.152,67.2,False,True,True,
+fixed-wing,2020-06-22,,0.152,67.3,False,True,True,
+fixed-wing,2021-06-29,,0.152,98.0,False,True,False,
+fixed-wing,2022-07-03,,0.152,98.0,False,True,True,
+fixed-wing,2023-07-06,,0.152,98.0,False,True,True,
+fixed-wing,2024-08-01,,0.152,98.0,False,True,True,
+LiDAR,2008-06-01,2008-06-06,,0.0,False,,False,MSL Ravalli 2008 (Bitterroot River N)
+LiDAR,2016-09-01,2016-09-01,,21.8,False,,False,QSI Bitterroot River
+LiDAR,2017-05-23,2017-05-23,,2.0,False,,False,MSL Missoula 2017 (Lolo Creek)
+LiDAR,2019-05-23,2019-06-16,,93.6,False,,False,"MSL Missoula 2019 (Clark Fork-Bitterroot, QL1)"
+LiDAR,2020-05-09,2020-06-02,,6.6,False,,False,MSL Ravalli 2020 (Phase 1)
+LiDAR,2021-10-16,2021-10-16,,7.9,False,,False,MSL Missoula 2021 (Phase 3)

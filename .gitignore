@@ -1,0 +1,30 @@
+# Rasters and working data: everything under data/ is listed in catalog/manifest.csv
+*.tif
+*.tiff
+*.aux.xml
+*.vrt
+data/
+# Ranch boundaries are private, wherever they land
+*ranch_boundary*
+*ranch_in_aoi*
+
+# Credentials
+.env
+*.json.key
+keys/
+
+# Python / OS
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.claude
+
+#Agents
+CLAUDE.md
+CONTRIBUTING.md
+# Internal working notes (kept local)
+docs/dev_notes.md
+scripts/dev/
+# Scratch experiments
+scratch/

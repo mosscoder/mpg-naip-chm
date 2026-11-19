@@ -1,0 +1,24 @@
+# Versions the products were made and checked with (Apple M1, MPS). The authors' requirements
+# (external/naip-chm/requirements.txt) ask for Python 3.11+ and torch 2.8; these older versions ran their code
+# unchanged and reproduce every stored prediction exactly.
+name: mpg-naip-chm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy=1.26.4
+  - pandas=2.2.3
+  - geopandas=1.0.1
+  - rasterio=1.4.3
+  - shapely=2.1.0
+  - pyproj=3.7.1
+  - scipy=1.15.2
+  - scikit-learn=1.6.1
+  - matplotlib=3.10.1
+  - pillow=11.1.0
+  - requests=2.32.3
+  - pyyaml=6.0.2
+  - rio-cogeo=5.4.1
+  - pytorch=2.6.0
+  - earthengine-api=1.5.22     # only to fetch 2009 NAIP, which is on Earth Engine alone
+  - google-cloud-storage       # only for publishing (09_publish.py)

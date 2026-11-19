@@ -1,0 +1,2 @@
+same_grid,n_pixels,r,mean_diff_m,mae_m,p99_abs_diff_m,pct_within_5cm,pct_within_25cm,cover_ge_2m_local_pct,cover_ge_2m_official_pct
+False,104722060,0.9972071,-0.005142573,0.24386823,1.5799999237060547,41.190795902983574,68.37074156104262,52.01868737112314,52.0431540403235

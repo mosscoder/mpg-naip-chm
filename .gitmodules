@@ -1,0 +1,4 @@
+[submodule "external/naip-chm"]
+	path = external/naip-chm
+	url = https://github.com/smorf-ntsg/naip-chm.git
+	ignore = untracked
