@@ -7,16 +7,16 @@ args <- commandArgs(trailingOnly = TRUE)
 bucket_url <- if (length(args)) args[1] else "https://storage.googleapis.com/mpg-naip-chm/"
 vsi <- if (grepl("^https?://", bucket_url)) "/vsicurl/" else ""
 
-# The catalog lists every map; best == TRUE marks the one best map per year
+# The catalog lists every map, and best == TRUE marks the one best map per year
 catalog   <- read.csv(paste0(bucket_url, "catalog.csv"))
 best_maps <- catalog[catalog$best, ]
 
 # Retrieve one year from the best-image series
 map_2019 <- best_maps[best_maps$year == 2019, ]
 map_2019$source; map_2019$acquired                                   # "naip", "2019-09-15"
-chm_cm <- rast(paste0(vsi, bucket_url, map_2019$path))[[1]]  # band 1: height in cm
+chm_cm <- rast(paste0(vsi, bucket_url, map_2019$path))[[1]]  # band 1 is height in cm
 
-# Helper: a lat/lon box (WGS84 degrees) as an extent in the products' CRS (EPSG:6514)
+# Helper that turns a lat/lon box (WGS84 degrees) into an extent in the products' CRS (EPSG:6514)
 latlon_extent <- function(west, south, east, north, crs_to = "EPSG:6514") {
   box <- densify(vect(ext(west, east, south, north), crs = "EPSG:4326"), 10)
   ext(project(box, crs_to))

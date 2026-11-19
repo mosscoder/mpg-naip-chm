@@ -9,18 +9,18 @@ best_maps <- catalog[catalog$best, ]
 
 # Continues from "Load in R" (uses bucket_url and best_maps).
 
-# Settings: the published 10 m files use these same values (scripts/08_derive.py)
+# Settings, the same values the published 10 m files use (scripts/08_derive.py)
 cell_size_m     <- 10                                      # side of each summary cell (m)
 min_valid_share <- 0.5                                     # a cell needs data in at least this share of its pixels
-grid_origin     <- c(x = 252000, y = 286000)               # top-left corner of the products' grid (EPSG:6514 m);
-                                                           #   keeps cells aligned across years and with the files
+grid_origin     <- c(x = 252000, y = 286000)               # top-left corner of the products' grid (EPSG:6514 m),
+                                                           #   which keeps cells aligned across years and with the files
 upper_quantile  <- 0.95                                    # the upper height percentile reported
-figure_area     <- ext(253700, 255700, 280700, 282200)     # area to summarize (EPSG:6514 m): the figure below
+figure_area     <- ext(253700, 255700, 280700, 282200)     # area to summarize (EPSG:6514 m), the window in the figure below
 
 # Summarize a 0.6 m canopy height map (cm) in square cells with any function of the heights (m).
-# Each 0.6 m pixel counts toward the cell holding its center; cells with data in less than min_valid_share
-# of their pixels are left NA. summary_fun gets only pixels with data and returns one or more named values;
-# each becomes a layer.
+# Each 0.6 m pixel counts toward the cell holding its center, and cells with data in less than min_valid_share
+# of their pixels are left NA. summary_fun gets only pixels with data and returns one or more named values,
+# and each becomes a layer.
 summarize_cells <- function(chm_cm, area, summary_fun, cell_size, min_valid_share, grid_origin) {
   # the grid, snapped outward from the origin to cover the area
   snap  <- function(value, origin, round_fun) origin + cell_size * round_fun((value - origin) / cell_size)
@@ -66,7 +66,7 @@ height_stats  <- function(h) {                             # zeros (bare ground)
 summaries <- lapply(c("2011" = 2011, "2020" = 2020), summarize, summary_fun = height_stats)
 pdf(NULL); plot(summaries[["2020"]], breaks = c(0, 0.25, 0.5, 1, 2, 5, 10, 35), col = hcl.colors(7, "viridis"))
 
-# Any function of the heights works, e.g. the share of each cell at least 2 m tall:
+# Any function of the heights works, for example the share of each cell at least 2 m tall
 cover_2020 <- summarize(2020, \(h) c(cover_ge_2m = mean(h >= 2)))
 
 # Check: the Python files round to whole centimeters, so differences should be <= 0.005 m
